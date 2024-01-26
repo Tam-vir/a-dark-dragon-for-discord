@@ -9,7 +9,7 @@ const client = new Client({intents: [GatewayIntentBits.Guilds, GatewayIntentBits
 const TOKEN = process.env['TOKEN']
 
 // server
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
