@@ -3,7 +3,6 @@ module.exports = {
   name: 'inventory',
   description: 'Check your inventory',
   callback: async (client, interaction) => {
-     const itr = await interaction;
     const query = {
       userId: interaction.user.id,
     };
