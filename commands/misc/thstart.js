@@ -20,8 +20,8 @@ module.exports = {
       const newPlayer = new Player({
         userId: interaction.user.id,
         world: map,
-        posX: 255,
-        posY: 255,
+        posX: 25,
+        posY: 25,
         inventory: [{
           type: 'coins',
           amount:0
