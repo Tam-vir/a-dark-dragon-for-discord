@@ -28,9 +28,3 @@ app.listen(80, () => {
     console.log(err);
   }
 })();
-
-//bot
-
-eventHandler(client);
-client.login(TOKEN);
-
