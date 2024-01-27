@@ -9,9 +9,10 @@ module.exports = {
     const query = {
       userId: interaction.user.id,
     };
+    await interaction.reply("One moment...")
     const player = await Player.findOne(query);
     if (player){
-      await interaction.reply(`You're already a hunter!`);
+      await interaction.editReply(`You're already a hunter!`);
       return;
     }
     else{
@@ -27,7 +28,7 @@ module.exports = {
         }],
         xp: 0,
       });
-      await interaction.reply("registering...")
+      await interaction.editReply("registering...")
       await newPlayer.save().then(async () =>{
         await interaction.editReply("Welcome to the treasure hunt! Use the `/play` command to start playing!");
         return;
