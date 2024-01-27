@@ -3,7 +3,7 @@ module.exports = {
   name: 'inventory',
   description: 'Check your inventory',
   callback: async (client, interaction) => {
-
+ 
     const query = {
       userId: interaction.user.id,
     };
@@ -16,7 +16,7 @@ module.exports = {
     }
     else{
       
-      await interaction.reply("Use the `/thstart` command to start as a hunter!");
+      await interaction.reply("Use the `/thstart` command to start as a hunter !");
      
     }
   },
