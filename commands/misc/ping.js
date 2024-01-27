@@ -4,7 +4,7 @@ module.exports = {
   name: 'ping',
   description: 'Pong!',
   callback: async (client, interaction) => {
-    let text = 0;
+    let text = 10;
     const addButton = new ButtonBuilder()
       .setCustomId('add')
       .setLabel('Add 1')
