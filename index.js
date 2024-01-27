@@ -17,6 +17,7 @@ app.listen(80, () => {
   console.log('Express server initialized');
 });
 
+
 (async () =>{
   try{
     await mongoose.connect(process.env['MONGODB_URI']);
@@ -27,3 +28,9 @@ app.listen(80, () => {
     console.log(err);
   }
 })();
+
+//bot
+
+eventHandler(client);
+client.login(TOKEN);
+
