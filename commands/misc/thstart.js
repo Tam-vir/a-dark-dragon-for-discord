@@ -12,6 +12,7 @@ module.exports = {
     const player = await Player.findOne(query);
     if (player){
       await interaction.reply(`You're already a hunter!`);
+      return;
     }
     else{
       const map = generateMap();
@@ -29,6 +30,7 @@ module.exports = {
       await interaction.reply("registering...")
       await newPlayer.save().then(async () =>{
         await interaction.editReply("Welcome to the treasure hunt! Use the `/play` command to start playing!");
+        return;
       }).catch(err =>{
         console.log('db error on saving player: ',err);
       });
