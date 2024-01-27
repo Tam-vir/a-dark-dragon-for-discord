@@ -12,12 +12,12 @@ const playerSchema = new Schema({
   posX:{
     type: Number,
     required: true,
-    default: 255,
+    default: 25,
   },
   posY:{
     type: Number,
     required: true,
-    default: 255,
+    default: 25,
   },
   inventory:{
     type: [],
