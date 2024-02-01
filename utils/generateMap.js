@@ -38,8 +38,8 @@ const generateMap = () => {
           }
       }
   }
-  const currentChunk = worldMap[playerChunkX][playerChunkY];
-  currentChunk[playerY][playerX] = 1;
+worldMap[0][0][4][4] = 1;
+
   placeTreasures()
   return worldMap;
 }
