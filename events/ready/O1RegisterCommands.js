@@ -7,7 +7,7 @@ module.exports = async (client) => {
   try {
     const localCommands = getLocalCommands();
     let guilds = client.guilds.cache.map(g => g.id);
-for(guildId of guilds){
+  for(guildId of guilds){
   const applicationCommands = await getApplicationCommands(
     client,
     guildId
