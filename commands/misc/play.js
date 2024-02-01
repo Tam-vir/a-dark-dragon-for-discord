@@ -28,7 +28,7 @@ module.exports = {
         }
         mapArt += `\n`
       }
-      await interaction.editReply(`You're already a hunter!`);
+      await interaction.editReply(mapArt);
       
     }
     else{
