@@ -6,34 +6,44 @@ const generateMap = () => {
    treasure: 100
   
   */
-  let world = []
-  for (let i = 0; i < 50; i++){
-    world.push([]);
-    for (let j = 0; j < 50; j++){
-      world[i].push(0);
+  const worldMap = Array.from({ length: 5 }, () =>
+      Array.from({ length: 5 }, () =>
+          Array.from({ length: 10 }, () => Array(10).fill(0))
+      )
+  );
+  
+  function addRiver() {
+    for (let i = 1; i < 9; i++) {
+        for (let j = 1; j < 9; j++) {
+            worldMap[2][2][i][j] = 5; // Water represented as "5"
+        }
     }
   }
-  world[25][25] = 1;
-  for(let i = 40; i < 48; i++){
-    for(let j = 40; j < 48; j++){
-      world[i][j] = 5;
-    }
+
+  // Add the river initially
+  addRiver()
+  function placeTreasures() {
+      let treasuresPlaced = 0;
+
+      while (true) {
+          if(treasuresPlaced < 50){
+            const randomChunkX = Math.floor(Math.random() * 5);
+            const randomChunkY = Math.floor(Math.random() * 5);
+            const randomX = Math.floor(Math.random() * 10);
+            const randomY = Math.floor(Math.random() * 10);
+
+            // Check if the position is empty (not occupied by the player or another treasure)
+            if (worldMap[randomChunkX][randomChunkY][randomX][randomY] === 0) {
+                worldMap[randomChunkX][randomChunkY][randomX][randomY] = 100;
+                treasuresPlaced++;
+            }
+          }
+        else{
+          return worldMap
+        }
+      }
   }
-  let treasuresSet = 0;
-  function setTreasure(){
-    let x = Math.floor(Math.random() * 50);
-    let y = Math.floor(Math.random() * 50);
-    if (world[x][y] === 0){
-      world[x][y] = 100;
-      treasuresSet++;
-    }
-  }
-  while(true){
-    if (treasuresSet === 60){
-      return world;
-    }
-    setTreasure();
-  }
+  placeTreasures()
   
 }
 module.exports = generateMap;

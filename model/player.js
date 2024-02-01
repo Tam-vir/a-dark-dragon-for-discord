@@ -9,15 +9,25 @@ const playerSchema = new Schema({
     type: [],
     required: true,
   },
-  posX:{
+    playerX :{
+    type: Number,
+    required: true,
+    default: 0,
+  },
+    playerY :{
     type: Number,
     required: true,
     default: 25,
   },
-  posY:{
+  playerChunkX :{
     type: Number,
     required: true,
-    default: 25,
+    default: 0,
+  },
+  playerChunkY : {
+    type: Number,
+    required: true,
+    default: 0,
   },
   inventory:{
     type: [],
