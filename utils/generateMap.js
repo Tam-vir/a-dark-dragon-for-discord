@@ -38,6 +38,8 @@ const generateMap = () => {
           }
       }
   }
+  currentChunk[playerY][playerX] = 1;
+  placeTreasures()
   return worldMap;
 }
 module.exports = generateMap;
