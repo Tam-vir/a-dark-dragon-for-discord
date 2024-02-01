@@ -5,7 +5,7 @@ const generateMap = () => {
    water: 5,
    treasure: 100
   
-  */
+  */ 
   const worldMap = Array.from({ length: 5 }, () =>
       Array.from({ length: 5 }, () =>
           Array.from({ length: 10 }, () => Array(10).fill(0))
