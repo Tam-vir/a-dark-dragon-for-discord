@@ -25,25 +25,19 @@ const generateMap = () => {
   function placeTreasures() {
       let treasuresPlaced = 0;
 
-      while (true) {
-          if(treasuresPlaced < 50){
-            const randomChunkX = Math.floor(Math.random() * 5);
-            const randomChunkY = Math.floor(Math.random() * 5);
-            const randomX = Math.floor(Math.random() * 10);
-            const randomY = Math.floor(Math.random() * 10);
+      while (treasuresPlaced < 50) {
+          const randomChunkX = Math.floor(Math.random() * 5);
+          const randomChunkY = Math.floor(Math.random() * 5);
+          const randomX = Math.floor(Math.random() * 10);
+          const randomY = Math.floor(Math.random() * 10);
 
-            // Check if the position is empty (not occupied by the player or another treasure)
-            if (worldMap[randomChunkX][randomChunkY][randomX][randomY] === 0) {
-                worldMap[randomChunkX][randomChunkY][randomX][randomY] = 100;
-                treasuresPlaced++;
-            }
+          // Check if the position is empty (not occupied by the player or another treasure)
+          if (worldMap[randomChunkX][randomChunkY][randomX][randomY] === 0) {
+              worldMap[randomChunkX][randomChunkY][randomX][randomY] = 100;
+              treasuresPlaced++;
           }
-        else{
-          return worldMap
-        }
       }
   }
-  placeTreasures()
-  
+  return worldMap;
 }
 module.exports = generateMap;

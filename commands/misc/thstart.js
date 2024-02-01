@@ -17,6 +17,7 @@ module.exports = {
     }
     else{
       const map = generateMap();
+      console.log('map:\n',map)
       const newPlayer = new Player({
         userId: interaction.user.id,
         world: map,
